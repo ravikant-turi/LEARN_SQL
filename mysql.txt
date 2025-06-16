@@ -1,0 +1,73 @@
+create database learnsql;
+
+use learnsql;
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10),
+    course VARCHAR(50),
+    city VARCHAR(50)
+);
+
+INSERT INTO students (name, age, gender, course, city) VALUES
+('Ravi', 21, 'Male', 'Java', 'Delhi'),
+('Anjali', 22, 'Female', 'Python', 'Mumbai'),
+('Rohan', 20, 'Male', 'Java', 'Delhi'),
+('Priya', 23, 'Female', 'C++', 'Kolkata'),
+('Amit', 22, 'Male', 'Java', 'Delhi'),
+('Neha', 21, 'Female', 'Python', 'Bangalore');
+
+
+-- Module 1: SQL Basics – SELECT Mastery
+-- 🎯 Objective:
+-- Understand how to retrieve data from a table
+
+-- Learn SQL keywords: SELECT, FROM, WHERE, DISTINCT, AS, LIMIT --
+
+select * from students;
+
+
+-- Q1: Show all columns of all students
+
+select * from students;
+
+-- Q2: Show only the names and courses of all students
+
+select name ,course from students;
+
+-- Q3: Show names and ages of students who are older than 21
+
+select name , age from students where age >21;
+
+-- Q4: Show the names of students who live in Delhi
+
+select name from students where city='Delhi';
+
+-- Q5: Show distinct course names (no repetition)
+
+select  distinct(course) from students ;
+
+-- Q6: Show all students who are enrolled in Java course
+
+select name from students where course="java";
+
+-- Q7: Show top 3 student records from the table
+
+select * from students order by id asc limit 3;
+
+-- Q8: Show names of female students only
+
+select * from students where gender='female';
+
+-- Q9: Show name AS 'Student Name', course AS 'Enrolled Course'
+
+select name as ' student nam ' , course as 'Enroller course' from students ;
+
+-- Q10: Show students who live in Bangalore or Kolkata
+
+select * from students where city='Bangalore' or city='Kolkata';
+
+
+
+
