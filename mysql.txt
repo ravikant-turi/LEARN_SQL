@@ -69,5 +69,57 @@ select name as ' student nam ' , course as 'Enroller course' from students ;
 select * from students where city='Bangalore' or city='Kolkata';
 
 
+-- MODULE 2---
+
+-- 🧩 Module 2: Filtering & Searching in SQL
+-- 🔍 Core Concepts:
+-- Concept	Purpose
+-- WHERE	Apply conditions
+-- AND / OR	Combine multiple conditions
+-- IN	Match value from a list
+-- BETWEEN	Match a range (inclusive)
+-- LIKE	Match partial patterns (wildcards)
+-- IS NULL / IS NOT NULL	Check for NULL values
+-- NOT	Negate any condition
+
+-- Q1: Show students who live in Delhi AND are enrolled in Java
+
+select * from students where city="Delhi" and course="java";
+-- Q2: Show students whose age is between 21 and 24
+
+select * from students where age  between 21 and 24;
+
+-- Q3: Show students whose city is either Mumbai, Chennai or Delhi
+
+select * from students where city in('mumbai','chennai','Delhi');
+
+-- Q4: Show students whose name starts with 'D'
+
+select * from students where name like 'A%';
+
+-- Q5: Show students who haven't provided a phone number
+
+select * from students where mobilenum is null;
+
+-- Q6: Show students who are NOT enrolled in Java course
+
+select * from students where course not in ('java');
+
+-- Q7: Show students who are either female OR under age 21
+
+select * from students where age <21 or gender='female';
+
+-- Q8: Show students whose name ends with 'a'
+
+select * from students where name like '%a';
+
+-- Q9: Show students with phone number containing '123'
+
+
+SELECT * FROM students WHERE mobilenum LIKE '%123%';
+
+-- Q10: Show students whose age is NOT between 21 and 24
+select * from students  where age not between 21 and 24;
+ 
 
 
