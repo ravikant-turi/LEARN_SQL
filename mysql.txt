@@ -122,4 +122,38 @@ SELECT * FROM students WHERE mobilenum LIKE '%123%';
 select * from students  where age not between 21 and 24;
  
 
+✅ Module 2: SQL WHERE Clause – Cheat Sheet
+Concept	Syntax	Example
+
+Basic WHERE	SELECT * FROM table WHERE column = value;	SELECT * FROM students WHERE city = 'Delhi';
+
+NOT Equal	!= or <>	SELECT * FROM students WHERE course != 'Java';
+
+IN Clause	column IN (val1, val2, ...)	SELECT * FROM students WHERE city IN ('Delhi', 'Mumbai');
+
+NOT IN Clause	column NOT IN (val1, val2, ...)	SELECT * FROM students WHERE course NOT IN ('Java', 'Python');
+
+BETWEEN	column BETWEEN low AND high	SELECT * FROM students WHERE age BETWEEN 20 AND 25;
+
+NOT BETWEEN	column NOT BETWEEN low AND high	SELECT * FROM students WHERE age NOT BETWEEN 20 AND 25;
+
+LIKE (Starts)	column LIKE 'A%'	SELECT * FROM students WHERE name LIKE 'A%';
+
+LIKE (Ends)	column LIKE '%a'	SELECT * FROM students WHERE name LIKE '%a';
+
+LIKE (Contains)	column LIKE '%n%'	SELECT * FROM students WHERE name LIKE '%n%';
+
+LIKE (Exact Length)	LIKE '____'	SELECT * FROM students WHERE name LIKE '____';
+
+IS NULL	column IS NULL	SELECT * FROM students WHERE mobileNum IS NULL;
+
+IS NOT NULL	column IS NOT NULL	SELECT * FROM students WHERE course IS NOT NULL;
+
+AND Condition	cond1 AND cond2	SELECT * FROM students WHERE city='Delhi' AND course='Java';
+
+OR Condition	cond1 OR cond2	SELECT * FROM students WHERE age<20 OR gender='female';
+
+NOT	NOT condition	SELECT * FROM students WHERE NOT city='Delhi';
+
+Combine Conditions	(cond1 AND cond2) OR cond3	SELECT * FROM students WHERE (age > 21 AND gender='male') OR city='Mumbai';
 
